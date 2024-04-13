@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.tax-panel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.tax-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 20rem;
+  padding: 32px;
+  border: 1px solid black;
+  font-weight: 600;
+}
+
+.label-input-pair-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  gap: 2px;
+}
+
+.tax-form-input-field{
+    padding: 10px;
+}
+
+.tax-form-submit-btn{
+    margin-top: 15px;
+    padding: 10px;
+}
