@@ -13,10 +13,11 @@ body {
 .tax-form {
   display: flex;
   flex-direction: column;
-  max-width: 20rem;
+  width: 20rem;
   padding: 32px;
-  border: 1px solid black;
+  border: 2px solid #d3dbe3;
   font-weight: 600;
+  border-radius: 4px;
 }
 
 .label-input-pair-container {
@@ -24,14 +25,30 @@ body {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
-  gap: 2px;
+  gap: 3px;
+}
+
+.tax-form-label{
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .tax-form-input-field{
     padding: 10px;
+    border: 2px solid #d3dbe3;
+    border-radius: 4px;
+    font-weight: 500;
 }
 
 .tax-form-submit-btn{
     margin-top: 15px;
     padding: 10px;
+}
+
+button{
+  background: #6559f5;
+  color: #fbf8ff;
+  font-weight: 500;
+  border:  none;
+  border-radius: 4px;
 }
