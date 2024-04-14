@@ -1,19 +1,24 @@
 body {
   margin: 0;
-  font-family: "Barlow", sans-serif;
 }
 
-*{
+.barlow-medium {
+  font-family: "Barlow", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+* {
   box-sizing: border-box;
 }
 
-main{
+main {
   background-color: #f1f5f7;
-   height: 100vh;
-   padding: 2rem;
+  height: 100vh;
+  padding: 2rem;
 }
 
-.tax-panel {
+#tax-panel {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,8 +30,7 @@ main{
   box-shadow: 0px 1px 16px 5px #dae4e8;
 }
 
-
-.title-bar{
+.title-bar {
   background-color: #9dadbb;
   display: flex;
   gap: 6px;
@@ -34,7 +38,7 @@ main{
   width: 100%;
 }
 
-.title-bar-circle{
+.title-bar-circle {
   background-color: #8e9eaa;
   border-radius: 24px;
   height: 12px;
@@ -49,6 +53,7 @@ main{
   border: 2px solid #d3dbe3;
   font-size: 14px;
   margin: auto;
+  position: relative;
 }
 
 .label-input-pair-container {
@@ -74,7 +79,7 @@ main{
   font-size: 14px;
 }
 
-.tax-form-input-field::placeholder{
+.tax-form-input-field::placeholder {
   color: #c2c9d0;
 }
 
@@ -104,6 +109,14 @@ button {
   font-size: 16px;
 }
 
-.output-container{
-  
+.output-container {
+  position: absolute;
+  background: #fefeff;
+  border: 2px solid #d3dbe3;
+  display: flex;
+  width: 35rem;
+  height: 20rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
