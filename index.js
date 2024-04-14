@@ -4,4 +4,9 @@ $(document).ready(function () {
     console.log("CLICKED");
     $("#output-container").hide();
   });
+
+  $("#tax-form-submit-btn").click(function (e) { 
+    e.preventDefault();
+    
+  });
 });
