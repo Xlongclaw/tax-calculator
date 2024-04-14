@@ -1,13 +1,22 @@
 body {
   margin: 0;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "Barlow", sans-serif;
 }
 
-.tax-panel{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+main{
+  background-color: #d3dbe3;
+   height: 100vh;
+   padding: 2.5rem;
+   box-sizing: border-box;
+}
+
+.tax-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: white;
 }
 
 .tax-form {
@@ -16,8 +25,8 @@ body {
   width: 20rem;
   padding: 32px;
   border: 2px solid #d3dbe3;
-  font-weight: 600;
   border-radius: 4px;
+  font-size: 14px;
 }
 
 .label-input-pair-container {
@@ -28,27 +37,47 @@ body {
   gap: 3px;
 }
 
-.tax-form-label{
-  font-size: 14px;
+.tax-form-label {
   font-weight: 500;
+  display: flex;
+  gap: 4px;
+  align-items: center;
 }
 
-.tax-form-input-field{
-    padding: 10px;
-    border: 2px solid #d3dbe3;
-    border-radius: 4px;
-    font-weight: 500;
+.tax-form-input-field {
+  padding: 10px;
+  border: 2px solid #d3dbe3;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
 }
 
-.tax-form-submit-btn{
-    margin-top: 15px;
-    padding: 10px;
+.tax-form-input-field::placeholder{
+  color: #c2c9d0;
 }
 
-button{
+.info-circle {
+  font-size: 10px;
+  border: 2px solid #d3dbe3;
+  color: #898d93;
+  border-radius: 10px;
+  width: 12px;
+  height: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tax-form-submit-btn {
+  margin-top: 15px;
+  padding: 10px;
+}
+
+button {
   background: #6559f5;
   color: #fbf8ff;
   font-weight: 500;
-  border:  none;
+  border: none;
   border-radius: 4px;
+  font-size: 16px;
 }
