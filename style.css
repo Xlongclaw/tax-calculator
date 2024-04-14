@@ -8,7 +8,8 @@
 }
 
 #tax-form{
-  width: 25rem; padding: 64px 40px 32px 40px;
+  width: 25rem;
+  padding: 64px 40px 32px 40px;
 }
 
 #label-input-pair-container{
@@ -59,4 +60,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.hidden{
+  pointer-events: none;
+  opacity: 0;
 }
