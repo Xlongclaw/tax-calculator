@@ -89,7 +89,12 @@
                      <span>?</span>
                   </div>
                </label>
-               <input class="tax-form-input-field" name="ageGroup" type="text">
+               <select name="ageGroup" id="">
+                  <option value="none" selected disabled hidden></option> 
+                  <option value="40">&#60;&nbsp;40</option>
+                  <option value="40">≥&nbsp;40&nbsp;&#38;&nbsp;&#60;&nbsp;60</option>
+                  <option value="40">≥&nbsp;60</option>
+               </select>
             </div>
 
             <!-- Input field for entering total applicable deductions -->
@@ -108,10 +113,10 @@
 
             <!-- Output container for displaying results -->
             <div id="output-container"
-               class="d-flex flex-column hidden justify-content-center align-items-center position-absolute fy-border p-5 ">
-               <div class="mx-5 my-2 d-flex flex-column   justify-content-center  align-items-center ">
+               class="d-flex flex-column hidden justify-content-center align-items-center position-absolute fy-border p-5">
+               <div class="mx-5 my-2 d-flex flex-column justify-content-center align-items-center w-100 ">
                   <div class="d-flex flex-column align-items-center mb-4">
-                     <span class="fs-3 fw-semibold">Your overall income will be</span>
+                     <span class="fs-3 fw-semibold text-center ">Your overall income will be</span>
                      <span id="final-income" class="fs-4">12,00,00</span>
                      <span>after tax deductions</span>
                   </div>
