@@ -58,6 +58,10 @@ select {
   font-size: 14px;
 }
 
+select:focus{
+  outline: none;
+}
+
 
 #tax-panel {
   display: flex;

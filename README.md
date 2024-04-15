@@ -44,6 +44,18 @@ This project is a simple tax calculator web application built using HTML, CSS, a
 5. **Click the "Submit" button** to calculate your overall income after tax deductions.
 6. The results will be displayed in the output container over the form.
 
+## Screenshots
+
+![](https://res.cloudinary.com/dlxpf7d8c/image/upload/v1713201534/w97so5bkartj39pgv2hp.png)
+
+![](https://res.cloudinary.com/dlxpf7d8c/image/upload/v1713201533/kcrlw1hb1lmuxqfllezi.png)
+
+![](https://res.cloudinary.com/dlxpf7d8c/image/upload/v1713201533/br9e3bjiws1wgtlkc4lx.png)
+
+![](https://res.cloudinary.com/dlxpf7d8c/image/upload/v1713201534/kdiow7vo4sh8cgw2urdb.png)
+
+![](https://res.cloudinary.com/dlxpf7d8c/image/upload/v1713201534/ct4gr9jxwq2q0psrr3j9.png)
+
 ## Customization
 
 - You can customize the CSS styles in the `style.css` and `defaults.css` files.
