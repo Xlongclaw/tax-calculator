@@ -65,7 +65,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* position: relative; */
 }
 
 .hidden {
@@ -77,3 +76,31 @@
   font-weight: 500;
 }
 
+
+.fy-tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+.fy-tooltip .fy-tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.fy-tooltip:hover .fy-tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
