@@ -9,7 +9,14 @@
 
 #tax-form {
   width: 25rem;
-  padding: 64px 40px 32px 40px;
+  border: 2px solid #d3dbe3;
+}
+
+@media only screen and (max-width: 450px) {
+  #tax-form {
+    width: 18rem;
+    border: none;
+  }
 }
 
 #label-input-pair-container {
@@ -22,8 +29,6 @@
 
 #output-container {
   background: #fefeff;
-  width: 35rem;
-  height: 20rem;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -71,3 +76,4 @@
 .tooltip-inner {
   font-weight: 500;
 }
+

@@ -41,7 +41,7 @@
 <body>
 
    <!-- Main content area of the webpage -->
-   <main>
+   <main class="p-md-5 p-3">
 
       <!-- Section containing the tax calculator panel -->
       <section id="tax-panel" class="barlow-medium rounded-2 shadow-q" style="background-color: #fefeff">
@@ -54,7 +54,7 @@
          </div>
 
          <!-- Form for inputting tax information -->
-         <form id="tax-form" class="d-flex flex-column fy-border m-auto">
+         <form id="tax-form" class="d-flex flex-column m-auto px-md-5 pt-md-5 pb-md-4 px-3 py-5   ">
 
             <!-- Input field for entering gross annual income -->
             <div id="label-input-pair-container">
@@ -86,7 +86,8 @@
                <label class="tax-form-label" for="">
                   <span>Enter age group</span>
                   <div id="info-circle" data-bs-toggle="tooltip" title="Age you belong to" data-bs-placement="top">
-                     <span>?</span></div>
+                     <span>?</span>
+                  </div>
                </label>
                <input class="tax-form-input-field" name="ageGroup" type="text">
             </div>
@@ -107,13 +108,15 @@
 
             <!-- Output container for displaying results -->
             <div id="output-container"
-               class="d-flex flex-column hidden justify-content-center align-items-center position-absolute fy-border">
-               <div class="d-flex flex-column align-items-center mb-4">
-                  <span class="fs-3 fw-semibold">Your overall income will be</span>
-                  <span id="final-income" class="fs-4">12,00,00</span>
-                  <span>after tax deductions</span>
+               class="d-flex flex-column hidden justify-content-center align-items-center position-absolute fy-border p-5 ">
+               <div class="mx-5 my-2 d-flex flex-column   justify-content-center  align-items-center ">
+                  <div class="d-flex flex-column align-items-center mb-4">
+                     <span class="fs-3 fw-semibold">Your overall income will be</span>
+                     <span id="final-income" class="fs-4">12,00,00</span>
+                     <span>after tax deductions</span>
+                  </div>
+                  <button id="output-container-close-btn" class="px-3 py-2 rounded-1 mt-4">Close</button>
                </div>
-               <button id="output-container-close-btn" class="px-3 py-2 rounded-1 mt-4">Close</button>
             </div>
          </form>
       </section>
