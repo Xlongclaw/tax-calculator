@@ -65,6 +65,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+
+.fy-input-field{
+  padding: 8px 12px;
+  border: 2px solid #d3dbe3;
+  border-radius: 4px;
+  font-size: 14px;
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
 }
 
 .hidden {
@@ -72,15 +84,10 @@
   opacity: 0;
 }
 
-.tooltip-inner {
-  font-weight: 500;
-}
-
 
 .fy-tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
 }
 
 .fy-tooltip .fy-tooltiptext {
@@ -88,6 +95,7 @@
   width: 120px;
   background-color: #555;
   color: #fff;
+  font-size: 12px;
   text-align: center;
   border-radius: 6px;
   padding: 5px;
@@ -100,7 +108,7 @@
   transition: opacity 0.3s;
 }
 
-.fy-tooltip:hover .fy-tooltiptext {
+#info-circle:hover .fy-tooltiptext {
   visibility: visible;
   opacity: 1;
 }

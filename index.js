@@ -58,20 +58,26 @@ $(document).ready(function () {
     e.preventDefault();
 
     // Retrieve form data from the tax form
-    const formData = getFormData("#tax-form");
+    const result = getFormData("#tax-form");
 
-    // Calculate the final income based on the form data
-    const finalIncome = calculateIncome(formData);
+    const validation = validateForm(result);
 
-    // Update the displayed final income in the output container
-    $("#final-income").empty();
-    $("#final-income").append(finalIncome.toLocaleString("en-IN"));
+    if (validation !== "INVALID") {
+      // Calculate the final income based on the form data
+      const finalIncome = calculateIncome(result);
 
-    // Show the output container and enable pointer events
-    $("#output-container").css({ "pointer-events": "all", opacity: "1" });
+      // Update the displayed final income in the output container
+      $("#final-income").empty();
+      $("#final-income").append(finalIncome.toLocaleString("en-IN"));
 
-    // Hide the submit button and enable pointer events
-    $("#tax-form-submit-btn").css({ "pointer-events": "none", opacity: "0" });
+      // Show the output container and enable pointer events
+      $("#output-container").css({ "pointer-events": "all", opacity: "1" });
+
+      // Hide the submit button and enable pointer events
+      $("#tax-form-submit-btn").css({ "pointer-events": "none", opacity: "0" });
+    } else {
+
+    }
   });
 });
 
@@ -88,7 +94,11 @@ const getFormData = (selector) => {
   var data = $(selector).serializeArray();
 
   data.forEach((field) => {
-    formObj[field.name] = Number(field.value);
+    if (field.value !== "" && isNumeric(field.value)) {
+      formObj[field.name] = Number(field.value);
+    } else {
+      formObj[field.name] = "INVALID";
+    }
   });
   return formObj;
 };
@@ -101,11 +111,10 @@ const getFormData = (selector) => {
  */
 const calculateIncome = (data) => {
   var finalIncome = 0;
-
+  
   // Calculate the overall income by summing gross annual income and extra income, then subtracting deductions
   var overallIncome =
-    data.grossAnnualIncome + data.extraIncome - data.totalApplicableDeductions;
-
+  data.grossAnnualIncome + data.extraIncome - data.totalApplicableDeductions;
   // Check if overall income meets or exceeds the tax boundary
   if (overallIncome >= TAX_BOUNDARY) {
     // Loop through each age group tax bracket
@@ -128,3 +137,30 @@ const calculateIncome = (data) => {
     return overallIncome;
   }
 };
+
+const validateForm = (formData) => {
+  let counter = 0
+  Object.values(formData).forEach((fieldData, i) => {
+    const fieldName = Object.keys(formData)[i];
+    if (fieldData === "INVALID") {
+      $(`.${fieldName}IC > span`).css({ color: "red" });
+      $(`.${fieldName}IC`).css({ "border-color": "red" });
+      counter ++;
+    } else{
+      $(`.${fieldName}IC > span`).css({ color: "#d3dbe3" });
+      $(`.${fieldName}IC`).css({ "border-color": "#d3dbe3" });
+    }
+  });
+
+  if(counter===0){
+    return "VALID"
+  }
+  return "INVALID";
+};
+
+
+function isNumeric(str) {
+  if (typeof str != "string") return false 
+  return !isNaN(str) && 
+         !isNaN(parseFloat(str)) 
+}
