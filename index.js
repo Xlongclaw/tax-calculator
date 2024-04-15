@@ -29,6 +29,10 @@ const TAX_PERCENTAGES_FOR_AGE_GROUP = [
  * Runs when the document is ready (i.e., when the DOM is fully loaded).
  */
 $(document).ready(function () {
+  var tooltipTriggerList = [].slice.call($('[data-bs-toggle="tooltip"]'));
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
 
   /**
    * Event handler for the close button in the output container.
@@ -40,7 +44,7 @@ $(document).ready(function () {
 
     // Hide the output container and disable pointer events
     $("#output-container").css({ "pointer-events": "none", opacity: "0" });
-    
+
     // Show the submit button and disable pointer events
     $("#tax-form-submit-btn").css({ "pointer-events": "all", opacity: "1" });
   });
@@ -78,7 +82,7 @@ $(document).ready(function () {
  * @returns {Object} An object containing the form data as key-value pairs, with numeric values.
  */
 const getFormData = (selector) => {
-  var formObj = {}; 
+  var formObj = {};
 
   // Serialize the form data into an array of key-value pairs
   var data = $(selector).serializeArray();
@@ -99,19 +103,19 @@ const calculateIncome = (data) => {
   var finalIncome = 0;
 
   // Calculate the overall income by summing gross annual income and extra income, then subtracting deductions
-  var overallIncome = data.grossAnnualIncome + data.extraIncome - data.totalApplicableDeductions;
+  var overallIncome =
+    data.grossAnnualIncome + data.extraIncome - data.totalApplicableDeductions;
 
   // Check if overall income meets or exceeds the tax boundary
   if (overallIncome >= TAX_BOUNDARY) {
-
     // Loop through each age group tax bracket
     for (let index = 0; index < TAX_PERCENTAGES_FOR_AGE_GROUP.length; index++) {
-
       // Check if the user's age group falls within the current tax bracket
       if (data.ageGroup < TAX_PERCENTAGES_FOR_AGE_GROUP[index].ageLimit) {
-
         // Calculate the tax based on the current bracket's tax percentage
-        let tax = (overallIncome * TAX_PERCENTAGES_FOR_AGE_GROUP[index].taxPercentage) / 100;
+        let tax =
+          (overallIncome * TAX_PERCENTAGES_FOR_AGE_GROUP[index].taxPercentage) /
+          100;
 
         // Subtract the calculated tax from the overall income to get the final income
         finalIncome = overallIncome - tax;

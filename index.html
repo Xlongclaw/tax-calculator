@@ -1,105 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
 
-      <!-- Specifies the character encoding for the document -->
-      <meta charset="UTF-8">
+<head>
 
-      <!-- Sets the viewport settings to improve responsiveness -->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Specifies the character encoding for the document -->
+   <meta charset="UTF-8">
 
-      <!-- Title of the webpage -->
-      <title>Tax Calculator</title>
+   <!-- Sets the viewport settings to improve responsiveness -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <!-- Links to external CSS files -->
-      <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="defaults.css">
+   <!-- Title of the webpage -->
+   <title>Tax Calculator</title>
 
-      <!-- Preconnects to Google Fonts for faster loading -->
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <!-- Links to external CSS files -->
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="defaults.css">
 
-      <!-- Links to the Google Fonts stylesheet -->
-      <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600&display=swap" rel="stylesheet">
+   <!-- Preconnects to Google Fonts for faster loading -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-      <!-- Links to the Bootstrap CSS framework for styling and layout -->
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   <!-- Links to the Google Fonts stylesheet -->
+   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600&display=swap"
+      rel="stylesheet">
 
-      <!-- Links to the jQuery library for JavaScript functionality -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-   </head>
-   <body>
+   <!-- Links to the Bootstrap CSS framework for styling and layout -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-      <!-- Main content area of the webpage -->
-      <main>
+   <!-- Links to the jQuery library for JavaScript functionality -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"></script>
+</head>
 
-         <!-- Section containing the tax calculator panel -->
-         <section id="tax-panel" class="barlow-medium rounded-2 shadow-q" style="background-color: #fefeff">
+<body>
 
-            <!-- Title bar at the top of the panel with colored circles -->
-            <div id="title-bar" class="d-flex gap-1 py-2 px-3 w-100" style="background-color: #9dadbb;">
-               <div id="title-bar-circle" class="fy-circle"></div>
-               <div id="title-bar-circle" class="fy-circle"></div>
-               <div id="title-bar-circle" class="fy-circle"></div>
+   <!-- Main content area of the webpage -->
+   <main>
+
+      <!-- Section containing the tax calculator panel -->
+      <section id="tax-panel" class="barlow-medium rounded-2 shadow-q" style="background-color: #fefeff">
+
+         <!-- Title bar at the top of the panel with colored circles -->
+         <div id="title-bar" class="d-flex gap-1 py-2 px-3 w-100" style="background-color: #9dadbb;">
+            <div id="title-bar-circle" class="fy-circle"></div>
+            <div id="title-bar-circle" class="fy-circle"></div>
+            <div id="title-bar-circle" class="fy-circle"></div>
+         </div>
+
+         <!-- Form for inputting tax information -->
+         <form id="tax-form" class="d-flex flex-column fy-border m-auto">
+
+            <!-- Input field for entering gross annual income -->
+            <div id="label-input-pair-container">
+               <label class="tax-form-label" for="">
+                  <span>Enter gross annual income</span>
+                  <div id="info-circle" data-bs-toggle="tooltip"
+                     title="General annual income is your total salary in a year before any deductions"
+                     data-bs-placement="top">
+                     <span>?</span>
+                  </div>
+               </label>
+               <input class="tax-form-input-field" type="text" name="grossAnnualIncome"
+                  placeholder="Enter gross annual income">
             </div>
 
-            <!-- Form for inputting tax information -->
-            <form id="tax-form" class="d-flex flex-column fy-border m-auto">
-
-               <!-- Input field for entering gross annual income -->
-               <div id="label-input-pair-container">
-                  <label class="tax-form-label" for="">
-                  <span>Enter gross annual income</span>
-                  <span id="info-circle">?</span>
-                  </label>
-                  <input class="tax-form-input-field" type="text" name="grossAnnualIncome" placeholder="Enter gross annual income">
-               </div>
-
-               <!-- Input field for entering extra income -->
-               <div id="label-input-pair-container">
-                  <label class="tax-form-label" for="">
+            <!-- Input field for entering extra income -->
+            <div id="label-input-pair-container">
+               <label class="tax-form-label" for="">
                   <span>Enter extra income</span>
-                  <span id="info-circle">?</span>
-                  </label>
-                  <input class="tax-form-input-field" type="text" name="extraIncome" placeholder="Enter extra Income from other sources">
-               </div>
+                  <div id="info-circle" data-bs-toggle="tooltip" title="Extra income you generate"
+                     data-bs-placement="top"> <span>?</span></div>
+               </label>
+               <input class="tax-form-input-field" type="text" name="extraIncome"
+                  placeholder="Enter extra Income from other sources">
+            </div>
 
-               <!-- Input field for entering age group -->
-               <div id="label-input-pair-container">
-                  <label class="tax-form-label" for="">
+            <!-- Input field for entering age group -->
+            <div id="label-input-pair-container">
+               <label class="tax-form-label" for="">
                   <span>Enter age group</span>
-                  <span id="info-circle">?</span>
-                  </label>
-                  <input class="tax-form-input-field" name="ageGroup" type="text">
-               </div>
+                  <div id="info-circle" data-bs-toggle="tooltip" title="Age you belong to" data-bs-placement="top">
+                     <span>?</span></div>
+               </label>
+               <input class="tax-form-input-field" name="ageGroup" type="text">
+            </div>
 
-               <!-- Input field for entering total applicable deductions -->
-               <div id="label-input-pair-container">
-                  <label class="tax-form-label" for="">
+            <!-- Input field for entering total applicable deductions -->
+            <div id="label-input-pair-container">
+               <label class="tax-form-label" for="">
                   <span>Enter total applicable deductions</span>
-                  <span id="info-circle">?</span>
-                  </label>
-                  <input class="tax-form-input-field" type="text" name="totalApplicableDeductions" placeholder="Enter total applicable deductions">
+                  <div id="info-circle" data-bs-toggle="tooltip" title="Toatal deductions from your income"
+                     data-bs-placement="top"><span>?</span></div>
+               </label>
+               <input class="tax-form-input-field" type="text" name="totalApplicableDeductions"
+                  placeholder="Enter total applicable deductions">
+            </div>
+
+            <!-- Submit button for the form -->
+            <button id="tax-form-submit-btn" class="p-2 mt-4 rounded" type="submit">Submit</button>
+
+            <!-- Output container for displaying results -->
+            <div id="output-container"
+               class="d-flex flex-column hidden justify-content-center align-items-center position-absolute fy-border">
+               <div class="d-flex flex-column align-items-center mb-4">
+                  <span class="fs-3 fw-semibold">Your overall income will be</span>
+                  <span id="final-income" class="fs-4">12,00,00</span>
+                  <span>after tax deductions</span>
                </div>
+               <button id="output-container-close-btn" class="px-3 py-2 rounded-1 mt-4">Close</button>
+            </div>
+         </form>
+      </section>
+   </main>
 
-               <!-- Submit button for the form -->
-               <button id="tax-form-submit-btn" class="p-2 mt-4 rounded" type="submit">Submit</button>
+   <!-- Links to the external JavaScript file for the tax calculator functionality -->
+   <script type="module" src="./index.js"></script>
+</body>
 
-               <!-- Output container for displaying results -->
-               <div id="output-container" class="d-flex flex-column hidden justify-content-center align-items-center position-absolute fy-border">
-                  <div class="d-flex flex-column align-items-center mb-4">
-                     <span class="fs-3 fw-semibold">Your overall income will be</span>
-                     <span id="final-income" class="fs-4">12,00,00</span>
-                     <span>after tax deductions</span>
-                  </div>
-                  <button id="output-container-close-btn" class="px-3 py-2 rounded-1 mt-4">Close</button>
-               </div>
-            </form>
-         </section>
-      </main>
-
-      <!-- Links to the external JavaScript file for the tax calculator functionality -->
-      <script type="module" src="./index.js"></script>
-   </body>
 </html>
